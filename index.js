@@ -1,11 +1,13 @@
 require("dotenv").config();
-
+const cors = require("cors");
 const express = require("express");
 const { default: mongoose } = require("mongoose");
 
 const userRoutes = require("./routes/userRoutes");
 const authRoutes = require("./routes/authRoutes");
 const app = express();
+
+app.use(cors());
 
 app.use(
   express.urlencoded({
